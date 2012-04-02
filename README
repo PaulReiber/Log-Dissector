@@ -1,0 +1,8 @@
+LogDissector is an AWK script for making sense of very large logfiles.
+
+It creates a bunch of other files from the data it collects as it passes over the logfile.
+
+Make sure you have sufficient disk space before running it.
+
+LogDissector was written both to showcase the power of AWK's associative arrays, and as a tool for daily use in systems administration.
+
