@@ -28,35 +28,23 @@
 
     <div class="container">
       <section id="main_content">
-        <h3>Welcome to GitHub Pages.</h3>
+        <h3>So what's this about?</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+I realized logfiles have a variety of line formats, but a bunch of common elements.
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+Recognizing the common elements, and replacing them with indicators of what they are - an IP address, filename, date, etc. - generates a "pattern" - something which will be repeated N times in a logfile.
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+This script passes over a logfile once.  It adds entries in various associative arrays for all the elements it finds, whether they be just words, or something recognizable as some other kind of element.  It also associates the line number with the pattern for the line.  Various counters get bumped up as well.
 
-<h3>Designer Templates</h3>
+Once all of the lines have been parsed, the "post processing" phase begins.
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+It's pretty simple - loop over every associative array we've created, and print it out, but print it to a "command pipe" which sorts the resulting output.
 
-<h3>Rather Drive Stick?</h3>
+<h3>End result</h3>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+This script creates a bunch of new files.  They're all worth reviewing.  Often you'll be able to extract insights from them that you very well may have missed by simply reviewing the logfile itself.
 
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact support@github.com and we’ll help you sort it out.</p>
       </section>
     </div>
-
-    
   </body>
 </html>
