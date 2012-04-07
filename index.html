@@ -29,15 +29,14 @@
     <div class="container">
       <section id="main_content">
         <h3>So what's this about?</h3>
-
-I realized logfiles have a variety of line formats, but a bunch of common elements.
-
-Recognizing the common elements, and replacing them with indicators of what they are - an IP address, filename, date, etc. - generates a "pattern" - something which will be repeated N times in a logfile.
-
-This script passes over a logfile once.  It adds entries in various associative arrays for all the elements it finds, whether they be just words, or something recognizable as some other kind of element.  It also associates the line number with the pattern for the line.  Various counters get bumped up as well.
-
+I review logfiles a LOT for my customers.  I realized that, while a single logfile may have a variety of line formats, it has both a bunch of common elements and some number of repeating instances of each line format.
+<p>
+Recognizing the common elements, and replacing them with indicators of what they are - an IP address, filename, date, etc. - lets us arrive at a "pattern" - a line format which will be repeated N times in a logfile.  There's a value in knowning the various line formats in a logfile, and a value in knowing the various values for the various identifiable fields.
+<p>
+This script passes over a logfile once.  It adds entries in a handful of associative arrays for all the elements it finds, whether they be just words, or something recognizable as some other kind of element.  It also associates the line number with the pattern for the line.  Counters get bumped up as well.
+<p>
 Once all of the lines have been parsed, the "post processing" phase begins.
-
+<p>
 It's pretty simple - loop over every associative array we've created, and print it out, but print it to a "command pipe" which sorts the resulting output.
 
 <h3>End result</h3>
