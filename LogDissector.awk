@@ -11,6 +11,7 @@
 # USAGE EXAMPLES:
 #     awk -v skip="1,3,5" -v collect="2,4,6" -f logdissector.awk any.logfile
 #     tail -1000000 /var/log/messages | awk -f logdissector.awk
+#     awk -v ext=_syslog_`date +%j` -f logdissector.awk /var/log/syslog
 #
 
 # if you encounter problems it may be related to how your awk understands FS
